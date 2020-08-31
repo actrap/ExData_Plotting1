@@ -1,0 +1,11 @@
+
+png(filename = "plot4.png", width=480, height=480)
+par(mfrow=c(2,2))
+with(Epc0702_01.02,plot(date.time, Global_active_power, type = "l", xlab="" , ylab = "Global Active Power (kilowatts)"))
+with(Epc0702_01.02,plot(date.time, Voltage, type = "l", xlab="datetime" , ylab = "Voltage"))
+with(Epc0702_01.02,plot(date.time, Sub_metering_1, type = "l", xlab="" , ylab = "Energy sub metering"))
+with(Epc0702_01.02,lines(date.time, Sub_metering_2, type = "l", col="red"))
+with(Epc0702_01.02,lines(date.time, Sub_metering_3, type = "l", col="blue"))
+legend("topright", legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), col=c("black", "red", "blue"), lty = c(1,1,1) )
+with(Epc0702_01.02,plot(date.time, Global_reactive_power, type = "l", xlab="datetime"))
+dev.off()
